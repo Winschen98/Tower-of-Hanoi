@@ -13,40 +13,73 @@
 </head>
 
 <body>
-    <header>
-        <h1 class="title">Tower of 
+    <div class="menu">
+        <h1>Tower of
             <span class="hanoi">
-            <span style='color: blue'>H</span>
-            <span style='color: red'>a</span>
-            <span style='color: skyblue'>n</span>
-            <span style='color: orange'>o</span>
-            <span style='color: green'>i</span>
+                <span style='color: blue'>H</span>
+                <span style='color: rgb(238, 255, 0)'>a</span>
+                <span style='color: skyblue'>n</span>
+                <span style='color: rgb(255, 166, 0)'>o</span>
+                <span style='color: green'>i</span>
             </span>
-        </h1>
-        <div class="score-board">
-            <h1>Moves: </h1>
-            <h1>Time: </h1>
-        </div>
-        <div class="rules-display">
-            <h1 class="rules-text">Rules</h1>
-            <ol class="hidden rules">
-                <li>Only one disk can be moved at a time</li>
-                <li>No disk can be placed on top of a small disk</li>
-            </ol>
-        </div>
-    </header>
-
-    <div id="towers">
-        <div>
-
-        </div>
+            <button>Play Game</button>
+            <h2>image design by anushua sarkar</h2>
     </div>
 
 
+    <div class="game fadeOut">
+        <header>
+            <h1 class="title">Tower of
+                <span class="hanoi">
+                    <span style='color: blue'>H</span>
+                    <span style='color: red'>a</span>
+                    <span style='color: skyblue'>n</span>
+                    <span style='color: orange'>o</span>
+                    <span style='color: green'>i</span>
+                </span>
+            </h1>
+            <div class="score-board">
+                <h1 class='moves'>Moves: </h1>
+                <h1 class='time'>Time: </h1>
+            </div>
+            <div class="rules-display">
+                <h1 class="rules-text"><img src="images/details-icon.png" alt="reset icon" class="info-icon">Rules</h1>
+                <ol class="hidden rules">
+                    <li>Only one disk can be moved at a time</li>
+                    <li>No disk can be placed on top of a smaller disk</li>
+                </ol>
+            </div>
+        </header>
+
+        <section id="towers">
+                <div class="tower1">
+                    
+                </div>
+                <div class="tower2">
+
+                </div>
+                <div class="tower3">
+
+                </div>
+        </section>
+
+        <div class="base">
+            </br>
+            </br>
+            <div class="buttons">
+
+                <input type="image" src="images/start-icon.png" name="restart" class="start-btn" />
 
 
+                <input type="image" src="images/restart-icon.png" name="restart" class="restart-btn" />
 
+            </div>
+        </div>
+    </div>
 
 </body>
+<footer>
+
+</footer>
 
 </html>

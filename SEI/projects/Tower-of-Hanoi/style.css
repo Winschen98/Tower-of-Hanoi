@@ -8,24 +8,92 @@ body {
     height: 100vh;
 }
 
+*:focus {
+    outline: none;
+}
+
+/* ======= animations =======*/
+
+.fadeOut {
+    opacity: 0; 
+    pointer-events: none; 
+}
+
+.fadeIn {
+    opacity: 1; 
+    pointer-events: all; 
+}
+
 .hidden {
     display: none; 
 }
 
-.title {
-    font-size: 42px;
-    letter-spacing: .05em;
+/* ======== menu screen ========= */
+.menu {
+    width: 100%;
+    height: 100%;
+    font-size: 50px; 
+    background:rgba(165, 101, 42, 0.712);
+    transition: opacity 0.75s ease-out;
+    background-image: url(images/Hanoi-cover.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex; 
+    align-items: center;
 }
 
-.hanoi{
+.menu h1 {
+    margin-bottom: 15vh;
+    margin-left: 1vh;
+}
+
+.menu h2 {
+    position: absolute;
+    width: 85%;
+    color: rgba(128, 0, 0, 0.582);
+    font-size: 15px;
+    text-align: right;
+    bottom:0;
+}
+
+.menu button {
+    width: 180px; 
+    height: 75px; 
+    border-radius: 100px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    background-color: rgb(235, 91, 91);
+    display: block;
+    margin-left: 12vw;
+    margin-top: 40px;
+}
+
+/* ========== game display =========== */
+
+.game {
+    transition: opacity 0.75s ease-in 0.75s;
+    /* position: absolute; */
+    transform: translate(0%, -110%);
+}
+
+.title {
+    font-size: 65px;
+    letter-spacing: .05em;
+    margin-bottom: .5em;
+}
+
+.hanoi {
     letter-spacing: -.04em;
 }
-.score-board{
+
+.score-board {
     display: inline-block;
     float: left;
-    font-size: 14px;
+    font-size: 18px;
     text-align: left;
-    margin-left: 5vh
+    margin-left: 5vh;
+    /* margin-top: 5vh; */
+    margin-bottom: 7vh;
 }
 
 .rules-display {
@@ -36,16 +104,98 @@ body {
     margin-top: 4vh;
 }
 
+.info-icon {
+    width: 30px;
+    height: 30px;
+}
+
 .rules-text {
     text-align: left;
     margin: 0 auto;
     cursor: help; 
 }
 
-.rules-text:hover + .hidden{
-    display: inline;
+.rules-text:hover + .hidden {
+    display: flex;
+    flex-direction: column;
 }
 
 .rules {
     margin : 0; 
+}
+
+/* ========== buttons ========= */
+.buttons {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.start-btn{
+    width: 60px;
+    height: 60px; 
+}
+
+.restart-btn{
+    width: 60px;
+    height: 60px; 
+}
+
+/* ========== towers & disks ========== */
+#towers {
+    width: 100%; 
+    height: 35%; 
+    display: flex; 
+    justify-content: space-around; 
+}
+
+.tower1, .tower2, .tower3 {
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+    background: rgba(165, 101, 42, 0.712);
+    width: 10px; 
+    border-radius: 90px; 
+    padding-top: 250px;
+    margin-top: 3em; 
+}
+
+.base {
+    background:rgba(165, 101, 42, 0.712);
+    width: 100; 
+    height: 200px;
+    margin: auto;
+    border-radius: 20px; 
+    position: relative;
+}
+
+.disk {
+    display: flex;
+	align-items: center;
+	list-style: none;
+	height: 24px;
+	display: block;
+	border-radius: 8px;
+    /* transform: translate(-45%, -235%) */
+}
+
+#disk1 {
+    width: 50px;
+    background-color: blue;
+}
+
+#disk2 {
+    width: 80px;
+    background-color: violet;
+}
+
+#disk3 {
+    width: 110px;
+    background-color: rgb(255, 154, 40);
+}
+
+#disk4 {
+    width: 140px;
+    background-color: rgb(137, 250, 114);
 }
