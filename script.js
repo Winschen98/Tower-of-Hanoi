@@ -1,9 +1,11 @@
 const game = () => {
     // game resources
-    const time = document.querySelector('.time'); 
-    const tower1 = document.querySelector(".tower1"); 
-    const tower2 = document.querySelector(".tower2");
-    const tower3 = document.querySelector(".tower3");
+    const timeDisplay = document.querySelector('.time'); 
+    const movesDisplay = document.querySelector('.moves'); 
+    const tower1 = document.querySelector('.tower1'); 
+    const tower2 = document.querySelector('.tower2');
+    const tower3 = document.querySelector('.tower3');
+    const restartBtn = document.querySelector('.restart-btn')
 
 
     // Initialized at menu screen. Enter game after play game is clicked. 
@@ -20,7 +22,6 @@ const game = () => {
 
     // display and update number of moves 
     const countMoves = () => {
-        const movesDisplay = document.querySelector('.moves'); 
         movesDisplay.innerText = moves;
     }
 
@@ -28,7 +29,7 @@ const game = () => {
     let timerInterval = null;
     let seconds = 0; 
     const updateTimer = () => {
-      document.querySelector('.time').innerText = ++seconds;
+      timeDisplay.innerText = ++seconds;
     }
     const startTimer = () => { 
         stopTimer(); 
@@ -54,7 +55,7 @@ const game = () => {
     const moveDisk = function(){
         // if no disk chosen and clicked on empty tower, do nothing 
         if (chosenDisk === undefined && this.childElementCount === 0){
-            console.log(this + "0")
+            console.log(this + '0')
             return;
         }
         //if no disk chosen, select the firstChild of the clicked tower
@@ -84,13 +85,22 @@ const game = () => {
     }
     //Resolve!! ====> 1) gap between base when prepending disk. 2) html/css problem: display changes as disk are appended and removed
 
-
-    tower1.addEventListener('click', moveDisk)
-    tower2.addEventListener('click', moveDisk)
-    tower3.addEventListener('click', moveDisk)
+    const restartGame = () => {
+        // add a modal that asks "are you a quitter with yes/no buttons"
+        stopTimer(); 
+        seconds = 0; 
+        timeDisplay.innerText = 0;
+        moves = 0; 
+        movesDisplay.innerText = 0;  
+    }
+ 
+    tower1.addEventListener('click', moveDisk);
+    tower2.addEventListener('click', moveDisk);
+    tower3.addEventListener('click', moveDisk);
+    restartBtn.addEventListener('click', restartGame);
 
     // for the winner display show a modal pop-up that asks if the player would like to play again
-
+     
 
   // invoke functions necessary for game.
   startGame();
