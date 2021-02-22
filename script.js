@@ -1,7 +1,7 @@
 const game = () => {
     // game resources
-    const timeDisplay = document.querySelector('.time'); 
-    const movesDisplay = document.querySelector('.moves'); 
+    const timeDisplay = document.querySelector('.time-js'); 
+    const movesDisplay = document.querySelector('.moves-js'); 
     const tower1 = document.querySelector('.tower1'); 
     const tower2 = document.querySelector('.tower2');
     const tower3 = document.querySelector('.tower3');
@@ -81,7 +81,7 @@ const game = () => {
             countMoves();
             chosenDisk = undefined;
                 if(seconds === 0){
-                    startTimer();
+                    startTimer(); 
                 }
         // chosen disk is larger than disk on selected tower
         } else {

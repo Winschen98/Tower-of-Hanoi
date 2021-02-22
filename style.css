@@ -100,26 +100,29 @@ body {
     letter-spacing: -.04em;
 }
 
+.space-out {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .score-board {
-    display: inline-block;
-    float: left;
+    display: flex; 
+    flex-direction: column; 
     /* not applying fontsize to moves */
     font-size: 18px;
     text-align: left;
     margin-left: 5vh;
-    margin-bottom: 12vh;
+    margin-bottom: 14vh;
 }
 
 .rules-display {
-    display: inline-block;
-    float: right; 
     text-align: left;
-    margin-right: 20vh;
-    margin-top: 4vh;
+    margin-right: 10vh;
 }
 
 .rules-display h1{
-    text-align: right; 
+    text-align: left; 
 }
 
 .info-icon {
