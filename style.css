@@ -88,10 +88,10 @@ body {
 .score-board {
     display: inline-block;
     float: left;
+    /* not applying fontsize to moves */
     font-size: 18px;
     text-align: left;
     margin-left: 5vh;
-    /* margin-top: 5vh; */
     margin-bottom: 12vh;
 }
 
@@ -148,7 +148,7 @@ body {
     justify-content: space-around; 
 }
 
-/* Resolve!!: increase clickable space */
+/* Resolve!! ====> increase clickable space */
 .tower1, .tower2, .tower3 {
 	cursor: pointer;
     background: rgba(165, 101, 42, 0.712);
