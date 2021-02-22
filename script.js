@@ -30,6 +30,36 @@ const game = () => {
         }
     }
 
+    // function to move disk
+    // to raise the selected disk I can add a class named 'raise' that raises it to the top of the tower
+    let chosenDisk = false;
+    const moveDisk = function(){
+        //if no disk chosen, take the firstChild of the clicked tower
+        if (chosenDisk === false){
+            console.log(this + '1')
+            chosenDisk = this.firstChild
+            console.log(chosenDisk)
+        } else if (chosenDisk === false && this.childElementCount === 0){
+            console.log(this + "2")
+            return
+        } else if (chosenDisk === this.firstChild){
+            console.log(this + '3')
+            chosenDisk = false
+        } else if (chosenDisk.value < this.lastChild.value || this.childElementCount === 0){
+            console.log(this + '4')
+            this.appendChild(chosenDisk)
+            chosenDisk = false
+        } else{
+            console.log(this + '5')
+            chosenDisk = false}
+    }
+
+    tower1.addEventListener('click', moveDisk)
+    tower2.addEventListener('click', moveDisk)
+    tower3.addEventListener('click', moveDisk)
+
+    // for the winner display show a modal pop-up that asks if the player would like to play again
+
 
   // invoke functions necessary for game.
   startGame();
