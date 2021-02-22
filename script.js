@@ -55,7 +55,7 @@ const game = () => {
     //     });
     // }
 
-    
+
     let chosenDisk = undefined;
     let moves = 0; 
     const moveDisk = function(){
@@ -73,14 +73,14 @@ const game = () => {
             this.classList.remove('selected');
         // if chosen disk is smaller than the most recent child or clicked tower is empty, append chosen disk
         } else if (this.childElementCount === 0 || chosenDisk.id < this.firstChild.id){
+            if(seconds === 0){
+                startTimer(); 
+            }
             chosenDisk.parentNode.classList.remove('selected');
             this.prepend(chosenDisk);
             moves ++;
             countMoves();
             chosenDisk = undefined;
-                if(seconds === 0){
-                    startTimer(); 
-                }
         // chosen disk is larger than disk on selected tower
         } else {
             chosenDisk = undefined
@@ -90,6 +90,7 @@ const game = () => {
 
     const restartGame = () => {
         // add a modal that asks "are you a quitter with yes/no buttons"
+        document.querySelectorAll('.disk').forEach(disk => disk.remove())
         stopTimer(); 
         seconds = 0; 
         timeDisplay.innerText = 0;
