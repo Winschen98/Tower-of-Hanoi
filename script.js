@@ -49,6 +49,12 @@ const game = () => {
         }
     }
 
+    // const clearDisk = () => {
+    //     towers.forEach(element => {
+            
+    //     });
+    // }
+
     // to raise the selected disk I can add a class named 'raise' that raises it to the top of the tower
     let chosenDisk = undefined;
     let moves = 0; 
@@ -92,6 +98,9 @@ const game = () => {
         timeDisplay.innerText = 0;
         moves = 0; 
         movesDisplay.innerText = 0;  
+        // reset disk 
+
+        initDisk(4);
     }
  
     tower1.addEventListener('click', moveDisk);

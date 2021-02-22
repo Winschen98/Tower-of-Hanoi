@@ -12,6 +12,15 @@ body {
     outline: none;
 }
 
+.selected::after{
+    content: "";
+    flex-grow: 1;
+    order: 1;
+}
+
+.selected li:first-child{
+    order: 0;
+}
 /* ======= animations =======*/
 
 .fadeOut {
@@ -109,6 +118,10 @@ body {
     margin-top: 4vh;
 }
 
+.rules-display h1{
+    text-align: right; 
+}
+
 .info-icon {
     width: 30px;
     height: 30px;
@@ -160,11 +173,14 @@ body {
     background: rgba(165, 101, 42, 0.712);
     width: 10px; 
     border-radius: 90px; 
-    padding-top: 200px;
     /* aligns the disk */
     display: flex;
 	flex-direction: column;
 	align-items: center;
+    justify-content: flex-end;
+    height: 30vh; 
+    margin: 0; 
+    padding: 0; 
 }
 
 .base {
@@ -183,6 +199,7 @@ body {
 	height: 24px;
 	display: block;
 	border-radius: 8px;
+    order: 2;
 }
 
 #disk1 {
