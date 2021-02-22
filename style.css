@@ -49,7 +49,7 @@ body {
 
 .menu h2 {
     position: absolute;
-    width: 85%;
+    width: 85%; 
     color: rgba(128, 0, 0, 0.582);
     font-size: 15px;
     text-align: right;
@@ -59,13 +59,19 @@ body {
 .menu button {
     width: 180px; 
     height: 75px; 
-    border-radius: 100px;
+    border-radius: 50px;
     font-family: 'Bebas Neue', cursive;
     font-size: 30px;
-    background-color: rgb(235, 91, 91);
+    background-color: rgb(221, 87, 63);
     display: block;
     margin-left: 12vw;
     margin-top: 40px;
+    transition: 0.25s;
+}
+
+.menu button:hover{
+    /* border-color:whitesmoke; */
+    color: whitesmoke;
 }
 
 /* ========== game display =========== */
@@ -177,7 +183,6 @@ body {
 	height: 24px;
 	display: block;
 	border-radius: 8px;
-    /* transform: translate(-45%, -235%) */
 }
 
 #disk1 {

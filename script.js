@@ -35,7 +35,7 @@ const game = () => {
         timerInterval = setInterval(updateTimer, 1000);  
     }
     const stopTimer = () => {
-        clearInterval(timerInterval);
+        clearInterval(timerInterval); 
     }
 
     // function to initialize disk. In case I want to scale the number of disk allow player to choose input or man increase num. 
