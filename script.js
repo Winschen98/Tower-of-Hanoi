@@ -55,27 +55,25 @@ const game = () => {
     //     });
     // }
 
-    // to raise the selected disk I can add a class named 'raise' that raises it to the top of the tower
+    
     let chosenDisk = undefined;
     let moves = 0; 
     const moveDisk = function(){
         // if no disk chosen and clicked on empty tower, do nothing 
         if (chosenDisk === undefined && this.childElementCount === 0){
-            console.log(this + '0')
             return;
         }
         //if no disk chosen, select the firstChild of the clicked tower
         if (chosenDisk === undefined){
-            console.log(this + '1')
             chosenDisk = this.firstChild
-            console.log(chosenDisk.id)
+            this.classList.add('selected');
         // if we click the same tower twice, it should reset chosenDisk
         } else if (chosenDisk === this.firstChild){
-            console.log(this + '2')
             chosenDisk = undefined;
+            this.classList.remove('selected');
         // if chosen disk is smaller than the most recent child or clicked tower is empty, append chosen disk
         } else if (this.childElementCount === 0 || chosenDisk.id < this.firstChild.id){
-            console.log(this + '3')
+            chosenDisk.parentNode.classList.remove('selected');
             this.prepend(chosenDisk);
             moves ++;
             countMoves();
@@ -85,7 +83,6 @@ const game = () => {
                 }
         // chosen disk is larger than disk on selected tower
         } else {
-            console.log(this + '4')
             chosenDisk = undefined
         }
     }
