@@ -41,8 +41,8 @@ const game = () => {
     }
 
     // function to initialize disk. In case I want to scale the number of disk allow player to choose input or man increase num. 
-    const initDisk = (num=4) => {
-        for (let i=1; i < num + 1; i++){
+    const initDisk = (numDisk=4) => {
+        for (let i=1; i < numDisk + 1; i++){
             const disk = document.createElement('li');
             disk.classList.add('disk');
             disk.id = 'disk' + i;
@@ -100,7 +100,9 @@ const game = () => {
 
     // for the winner display show a modal pop-up that asks if the player would like to play again
     // displayWin = () => {
+    //     if (tower3.childElementCount === numDisk){
 
+    //     }
     // }
 
     tower1.addEventListener('click', moveDisk);

@@ -60,10 +60,12 @@
 
         </header>
 
-        <div class="modal win-modal-js">
-            <div class="modal-content">
+        <div class='modal-container'>
+            <div id="modal" class="win-modal-js">
                 <h1>Well Done!</h1>
-                <p>Bet you can't beat that time!</p>
+                <p class="modal-text">you solved The Tower of Hanoi with ${numDisk} disk in ${seconds} and ${moves}
+                    moves!
+                </p>
                 <button class='modal-button'>Play again</button>
             </div>
         </div>
