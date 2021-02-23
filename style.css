@@ -8,19 +8,6 @@ body {
     height: 100vh;
 }
 
-*:focus {
-    outline: none;
-}
-
-.selected::after{
-    content: "";
-    flex-grow: 1;
-    order: 1;
-}
-
-.selected li:first-child{
-    order: 0;
-}
 /* ======= animations =======*/
 
 .fadeOut {
@@ -35,6 +22,20 @@ body {
 
 .hidden {
     display: none; 
+}
+
+*:focus {
+    outline: none;
+}
+
+.selected::after{
+    content: "";
+    flex-grow: 1;
+    order: 1;
+}
+
+.selected li:first-child{
+    order: 0;
 }
 
 /* ======== menu screen ========= */
@@ -145,17 +146,43 @@ body {
     margin : 0; 
 }
 
+.modal {
+    position: absolute; 
+    background-color: #fff;
+    padding: 2em 5em;
+    border-radius: .5em;
+    display: block; 
+    align-items: center;
+    justify-content: center;
+    background-color: skyblue;
+    text-align: center;
+    display: none;
+}
+
+.modal-button {
+    font-size: 1.25em;
+    font-weight: bold; 
+    background-color: #000;
+    border: none;
+    padding: .5em 1em;
+    color: #fff;
+    box-shadow: 0 0 0 2px #000 inset;
+    border-radius: .8em;
+    cursor: pointer;
+    transition: background .4s ease, color .4s ease;
+}
+.modal-button:hover {
+    box-shadow: 0 0 0 2px #000 inset;
+    color: #000;
+    background-color: white;
+}
+
 /* ========== buttons ========= */
 .buttons {
     margin-top: 1em;
     display: flex;
     justify-content: space-evenly;
 }
-
-/* .start-btn{
-    width: 60px;
-    height: 60px; 
-} */
 
 .restart-btn{
     width: 60px;

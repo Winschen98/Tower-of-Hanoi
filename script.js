@@ -5,7 +5,8 @@ const game = () => {
     const tower1 = document.querySelector('.tower1'); 
     const tower2 = document.querySelector('.tower2');
     const tower3 = document.querySelector('.tower3');
-    const restartBtn = document.querySelector('.restart-btn')
+    const restartBtn = document.querySelector('.restart-btn');
+    const winModal = document.querySelector('.win-modal-js');
 
 
     // Initialized at menu screen. Enter game after play game is clicked. 
@@ -49,11 +50,9 @@ const game = () => {
         }
     }
 
-    // const clearDisk = () => {
-    //     towers.forEach(element => {
-            
-    //     });
-    // }
+    const clearDisk = () => {
+        document.querySelectorAll('.disk').forEach(disk => disk.remove());
+    }
 
 
     let chosenDisk = undefined;
@@ -86,33 +85,33 @@ const game = () => {
             chosenDisk = undefined
         }
     }
-    //Resolve!! ====> 1) gap between base when prepending disk. 2) html/css problem: display changes as disk are appended and removed
 
     const restartGame = () => {
         // add a modal that asks "are you a quitter with yes/no buttons"
-        document.querySelectorAll('.disk').forEach(disk => disk.remove())
+        clearDisk();
         stopTimer(); 
         seconds = 0; 
         timeDisplay.innerText = 0;
         moves = 0; 
         movesDisplay.innerText = 0;  
-        // reset disk 
-
         initDisk(4);
     }
  
+
+    // for the winner display show a modal pop-up that asks if the player would like to play again
+    // displayWin = () => {
+
+    // }
+
     tower1.addEventListener('click', moveDisk);
     tower2.addEventListener('click', moveDisk);
     tower3.addEventListener('click', moveDisk);
     restartBtn.addEventListener('click', restartGame);
 
-    // for the winner display show a modal pop-up that asks if the player would like to play again
-     
-
-  // invoke functions necessary for game.
-  startGame();
-  countMoves();
-  initDisk();
+    // invoke functions necessary at start up. 
+    startGame();
+    countMoves();
+    initDisk();
 };
 
 //run the game 
