@@ -3,21 +3,20 @@ header{
 }
 
 body {
+    margin: 0;
     font-family: 'Bebas Neue', cursive;
     text-align: center;
     height: 100vh;
 }
 
 /* ======= animations =======*/
-
-.fadeOut {
-    opacity: 0; 
-    pointer-events: none; 
-}
-
-.fadeIn {
-    opacity: 1; 
-    pointer-events: all; 
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 .hidden {
@@ -88,9 +87,7 @@ body {
 /* ========== game display =========== */
 
 .game {
-    transition: opacity 0.75s ease-in 0.75s; 
-    /* position: absolute; */
-    /* transform: translate(0%, -110%); */
+    animation: fadeIn 2s;
 }
 
 .title {
