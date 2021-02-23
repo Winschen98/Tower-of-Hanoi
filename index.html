@@ -61,7 +61,7 @@
         </header>
 
         <div class='modal-container'>
-            <div id="modal" class="win-modal-js">
+            <div id="modal" class="modal-js">
                 <h1>Well Done!</h1>
                 <p class="modal-text">you solved The Tower of Hanoi with ${numDisk} disk in ${seconds} and ${moves}
                     moves!
@@ -72,7 +72,9 @@
 
         <section id="towers">
             <!-- leave no space between opening & closing div tag(due to #text) -->
-            <ul class="tower1"></ul>
+            <div class="clickspace">
+                <ul class="tower1"></ul>
+            </div>
             <ul class="tower2"></ul>
             <ul class="tower3"></ul>
         </section>

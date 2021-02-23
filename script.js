@@ -6,18 +6,21 @@ const game = () => {
     const tower2 = document.querySelector('.tower2');
     const tower3 = document.querySelector('.tower3');
     const restartBtn = document.querySelector('.restart-btn');
-    const winModal = document.querySelector('.win-modal-js');
-
+    const winModal = document.querySelector('.modal-js');
+    const gameScreen = document.querySelector('.game')
+    gameScreen.style.display = 'none';
 
     // Initialized at menu screen. Enter game after play game is clicked. 
     const startGame = () => {
         const playGameBtn = document.querySelector('.menu button')
         const menuScreen = document.querySelector('.menu')
-        const gameScreen = document.querySelector('.game')
 
         playGameBtn.addEventListener('click', () => {
             menuScreen.classList.add('fadeOut');
+            menuScreen.style.display = 'none';
+            gameScreen.classList.remove('fadeOut');
             gameScreen.classList.add('fadeIn');
+            gameScreen.style.display = 'block';
         });
     }
 
@@ -82,12 +85,14 @@ const game = () => {
             chosenDisk = undefined;
         // chosen disk is larger than disk on selected tower
         } else {
-            chosenDisk = undefined
+            chosenDisk.parentNode.classList.remove('selected');
+            chosenDisk = undefined;
         }
     }
+    // if reset class of previous disk if a new disk is selected
 
     const restartGame = () => {
-        // add a modal that asks "are you a quitter with yes/no buttons"
+        // ?? add a modal that asks "are you a quitter with yes/no buttons"
         clearDisk();
         stopTimer(); 
         seconds = 0; 
