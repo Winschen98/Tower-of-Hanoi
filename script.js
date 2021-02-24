@@ -16,11 +16,7 @@ const game = () => {
         const menuScreen = document.querySelector('.menu')
 
         playGameBtn.addEventListener('click', () => {
-            // menuScreen.classList.add('fadeOut');
             menuScreen.style.display = 'none';
-            // gameScreen.classList.remove('fadeOut');
-            // gameScreen.style.opacity = '0';
-            // gameScreen.classList.add('fadeIn');
             gameScreen.style.display = 'block';
         });
     }
