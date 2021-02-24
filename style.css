@@ -19,11 +19,6 @@ body {
 	}
 }
 
-/* .fadeOut {
-    opacity: 0; 
-    pointer-events: none;
-} */
-
 .hidden {
     display: none; 
 }
@@ -234,12 +229,6 @@ body {
     margin: 0; 
     padding: 0; 
 }
-/* .clickspace{
-    position: absolute;
-    background-color: transparent;
-    width: 30vh;
-    height: 30vh;
-} */
 
 .base {
     background:rgba(165, 101, 42, 0.712);

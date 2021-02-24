@@ -14,7 +14,7 @@ const game = () => {
     const winText =  document.querySelector('.win-text')
     const winRecord =  document.querySelector('.win-record')
     const modalButton = document.querySelector('.modal-button')
-    const textOptions = ['Well done!', 'Good job!', 'Bananas!', 'Nutty!', "You're on fire!", 'Excellent!', 'Big brain!', 'Congratulations!']
+    const textOptions = ['Well done!', 'Good job!', 'Bananas!', 'Nutty!', "You're on fire!", 'Excellent!', 'Big brain!', 'Congratulations!', 'No way!', 'Genius!', 'Nice work!', 'Insane!', 'totally rad!']
 
     // number of disk  ===> init at 1 disk (level 1) 
     let numDisk = 1;
@@ -25,7 +25,6 @@ const game = () => {
         const menuScreen = document.querySelector('.menu')
 
         playGameBtn.addEventListener('click', () => {
-            // menuScreen.classList.add('fadeOut');
             menuScreen.style.display = 'none';
             gameScreen.style.display = 'block';
         });
@@ -50,7 +49,7 @@ const game = () => {
         clearInterval(timerInterval); 
     }
 
-    // function to initialize disk. In case I want to scale the number of disk allow player to choose input or man increase num. 
+    // initialize disks
     const initDisk = (numDisk) => {
         for (let i=1; i < numDisk + 1; i++){
             const disk = document.createElement('li');
@@ -97,10 +96,8 @@ const game = () => {
             chosenDisk = undefined;
         }
     }
-    // if reset class of previous disk if a new disk is selected
 
     const restartGame = () => {
-        // ?? add a modal that asks "are you a quitter with yes/no buttons"
         clearDisk();
         stopTimer(); 
         seconds = 0; 
@@ -121,8 +118,12 @@ const game = () => {
         numDisk ++; 
         initDisk(numDisk);  
     }
+    const playAgain = () => {
+        numDisk = 1; 
+        restartGame(); 
+        modalButton.removeEventListener('click', playAgain);
+    }
 
-    // for the winner display show a modal pop-up that asks if the player would like to play again
     displayWin = () => {
         // check if last level 
         if (tower3.childElementCount === 8){
@@ -130,13 +131,18 @@ const game = () => {
             winModal.style.display = 'flex';
             winText.innerText = 'You beat the Tower of Hanoi!'
             winRecord.innerText = `you solved The Tower of Hanoi with ${numDisk} disk in ${seconds} seconds and ${moves} moves!`;
+            modalButton.innerText = 'play again';
+            modalButton.addEventListener('click', playAgain);
+            return;
         }
+        // check for win condition
         if (tower3.childElementCount === numDisk){
             stopTimer();
             winModal.style.display = 'flex';
-            winText.innerText = textOptions[Math.floor(Math.random() * textOptions.length + 1)];
+            winText.innerText = textOptions[Math.floor(Math.random() * textOptions.length)];
             winRecord.innerText = `you solved The Tower of Hanoi with ${numDisk} disk in ${seconds} seconds and ${moves} moves!`;
             // next level
+            modalButton.innerText = 'Next level';
             modalButton.addEventListener('click', nextLevel)
         }
     }
