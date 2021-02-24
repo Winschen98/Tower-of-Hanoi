@@ -1,14 +1,23 @@
 const game = () => {
     // game resources
+    const gameScreen = document.querySelector('.game')
+    gameScreen.style.display = 'none';
     const timeDisplay = document.querySelector('.time-js'); 
     const movesDisplay = document.querySelector('.moves-js'); 
     const tower1 = document.querySelector('.tower1'); 
     const tower2 = document.querySelector('.tower2');
     const tower3 = document.querySelector('.tower3');
     const restartBtn = document.querySelector('.restart-btn');
-    const winModal = document.querySelector('.modal-js');
-    const gameScreen = document.querySelector('.game')
-    gameScreen.style.display = 'none';
+
+    //modal 
+    const winModal = document.querySelector('.modal-container');
+    const winText =  document.querySelector('.win-text')
+    const winRecord =  document.querySelector('.win-record')
+    const modalButton = document.querySelector('.modal-button')
+    const textOptions = ['Well done!', 'Good job!', 'Bananas!', 'Nutty!', "You're on fire!", 'Excellent!', 'Big brain!', 'Congratulations!']
+
+    // number of disk 
+    let numDisk = 1;
 
     // Initialized at menu screen. Enter game after play game is clicked. 
     const startGame = () => {
@@ -16,6 +25,7 @@ const game = () => {
         const menuScreen = document.querySelector('.menu')
 
         playGameBtn.addEventListener('click', () => {
+            // menuScreen.classList.add('fadeOut');
             menuScreen.style.display = 'none';
             gameScreen.style.display = 'block';
         });
@@ -41,7 +51,7 @@ const game = () => {
     }
 
     // function to initialize disk. In case I want to scale the number of disk allow player to choose input or man increase num. 
-    const initDisk = (numDisk=4) => {
+    const initDisk = (numDisk) => {
         for (let i=1; i < numDisk + 1; i++){
             const disk = document.createElement('li');
             disk.classList.add('disk');
@@ -80,6 +90,7 @@ const game = () => {
             moves ++;
             countMoves();
             chosenDisk = undefined;
+            displayWin();
         // chosen disk is larger than disk on selected tower
         } else {
             chosenDisk.parentNode.classList.remove('selected');
@@ -96,16 +107,32 @@ const game = () => {
         timeDisplay.innerText = 0;
         moves = 0; 
         movesDisplay.innerText = 0;  
-        initDisk(4);
+        initDisk(numDisk);
     }
  
+    const nextLevel = () => {
+        clearDisk();
+        stopTimer(); 
+        seconds = 0; 
+        timeDisplay.innerText = 0;
+        moves = 0; 
+        movesDisplay.innerText = 0; 
+        winModal.style.display = 'none'; 
+        numDisk ++; 
+        initDisk(numDisk);  
+    }
 
     // for the winner display show a modal pop-up that asks if the player would like to play again
-    // displayWin = () => {
-    //     if (tower3.childElementCount === numDisk){
-
-    //     }
-    // }
+    displayWin = () => {
+        if (tower3.childElementCount === numDisk){
+            stopTimer();
+            winModal.style.display = 'flex';
+            winText.innerText = textOptions[Math.floor(Math.random() * textOptions.length + 1)];
+            winRecord.innerText = `you solved The Tower of Hanoi with ${numDisk} disk in ${seconds} seconds and ${moves} moves!`;
+            // next level
+            modalButton.addEventListener('click', nextLevel)
+        }
+    }
 
     tower1.addEventListener('click', moveDisk);
     tower2.addEventListener('click', moveDisk);
@@ -115,7 +142,8 @@ const game = () => {
     // invoke functions necessary at start up. 
     startGame();
     countMoves();
-    initDisk();
+    initDisk(numDisk);
+    displayWin();
 };
 
 //run the game 

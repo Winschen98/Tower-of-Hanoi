@@ -19,6 +19,11 @@ body {
 	}
 }
 
+/* .fadeOut {
+    opacity: 0; 
+    pointer-events: none;
+} */
+
 .hidden {
     display: none; 
 }
@@ -39,7 +44,6 @@ body {
 
 /* ======== menu screen ========= */
 .menu {
-    /* animation: fadeOut 1s; */
     width: 100%;
     height: 100%;
     font-size: 50px; 
@@ -81,7 +85,7 @@ body {
 }
 
 .menu button:hover{
-    /* border-color:whitesmoke; */
+    border-color:whitesmoke;
     color: whitesmoke;
 }
 
@@ -258,18 +262,27 @@ body {
     width: 50px;
     background-color: blue;
 }
-
 #disk2 {
     width: 80px;
     background-color: violet;
 }
-
 #disk3 {
     width: 110px;
     background-color: rgb(255, 154, 40);
 }
-
 #disk4 {
     width: 140px;
     background-color: rgb(137, 250, 114);
+}
+#disk5 {
+    width: 170px;
+    background-color: rgb(250, 246, 0);
+}
+#disk6 {
+    width: 210px;
+    background-color:tomato;
+}
+#disk7 {
+    width: 240px;
+    background-color: rgb(2, 238, 255);
 }
