@@ -122,6 +122,11 @@ body {
 .rules-display h1{
     text-align: left; 
 }
+.moves-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 3px;
+}
 .info-icon {
     width: 30px;
     height: 30px;
@@ -209,25 +214,24 @@ body {
 /* ========== towers & disks ========== */
 #towers {
     width: 100%; 
-    /* height: 35%;  */
     display: flex; 
     justify-content: space-around; 
 }
 
-/* Resolve!! ====> increase clickable space */
 .tower1, .tower2, .tower3 {
 	cursor: pointer;
-    background: rgba(165, 101, 42, 0.712);
-    width: 10px; 
-    border-radius: 90px; 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(images/game-images/tower.svg); 
     /* aligns disks */
     display: flex;
 	flex-direction: column;
 	align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-end; 
+    width: 10px; 
     height: 30vh; 
     margin: 0; 
-    padding: 0; 
+    padding: 0 50px;
 }
 
 .base {
