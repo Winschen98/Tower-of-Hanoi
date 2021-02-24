@@ -80,7 +80,7 @@ body {
 }
 
 .menu button:hover{
-    border-color:whitesmoke;
+    /* border-color:whitesmoke; */
     color: whitesmoke;
 }
 
@@ -96,7 +96,7 @@ body {
 }
 
 .hanoi {
-    letter-spacing: -.04em;
+    letter-spacing: -.06em;
 }
 
 .space-out {
