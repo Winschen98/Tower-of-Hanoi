@@ -165,8 +165,8 @@ body {
 #modal {
     padding: 2em 4em;
     border-radius: .5em;
-    width: 45vw;
-    height: 30vhvh; 
+    width: 25vw;
+    height: 16vh; 
     margin: 0 auto;
     text-align: center;
     background-color: skyblue;
@@ -285,4 +285,8 @@ body {
 #disk7 {
     width: 240px;
     background-color: rgb(2, 238, 255);
+}
+#disk8 {
+    width: 270px;
+    background-color:pink;
 }

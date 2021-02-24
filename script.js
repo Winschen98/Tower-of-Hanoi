@@ -16,7 +16,7 @@ const game = () => {
     const modalButton = document.querySelector('.modal-button')
     const textOptions = ['Well done!', 'Good job!', 'Bananas!', 'Nutty!', "You're on fire!", 'Excellent!', 'Big brain!', 'Congratulations!']
 
-    // number of disk 
+    // number of disk  ===> init at 1 disk (level 1) 
     let numDisk = 1;
 
     // Initialized at menu screen. Enter game after play game is clicked. 
@@ -124,6 +124,13 @@ const game = () => {
 
     // for the winner display show a modal pop-up that asks if the player would like to play again
     displayWin = () => {
+        // check if last level 
+        if (tower3.childElementCount === 8){
+            stopTimer();
+            winModal.style.display = 'flex';
+            winText.innerText = 'You beat the Tower of Hanoi!'
+            winRecord.innerText = `you solved The Tower of Hanoi with ${numDisk} disk in ${seconds} seconds and ${moves} moves!`;
+        }
         if (tower3.childElementCount === numDisk){
             stopTimer();
             winModal.style.display = 'flex';
