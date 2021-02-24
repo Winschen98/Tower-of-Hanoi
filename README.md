@@ -1,12 +1,22 @@
+# Tower of Hanoi Game
+![menu-screen-demo]("images/README-images/TOH-menu_screen.png")
+![game-screen-demo]("images/README-images/TOH-game_screen.png")
+
 # Project Description
 A simple implementation of the Tower of Hanoi puzzle where the user will start with 3 stacks and all disc stacked onto the left-most stack. The user's goal will be to take every disc from the left-most stack and move it to the right-most stack without placing a bigger disc on top of a smaller disc.
-
-This game was built with HTML, CSS, and vanilla JavaScript. 
-
 Have fun sharpening your problem solving skills!
 
-# Wire Frame
+# Technologies used
+This game was built with HTML, CSS, and vanilla JavaScript. 
+
+# Installation instructions
+All code to the game is provided. Simply load the game onto a webpage with HTML, CSS, JS, and have at it.
+
+# Wireframes
 ![Tower of Hanoi Wireframe](https://media.git.generalassemb.ly/user/34160/files/3b952d80-7204-11eb-995d-797cf4594bff)
 
 # User Stories
-As a player, I want to be able to move the individual discs, so that if I move every disc to the right stack while following the rules I will be rewarded with the winning display.
+As a player I want to be able to move the individual discs such that if I move every disc to the right stack while following the rules I will be rewarded with the winning display.
+
+# Hurdles 
+Many of the hurdles I encountered revolved around the CSS implementation of my game logic. Even with my JavaScript logic being sound it was difficult at times to coordinate the CSS to animate certain aspects of the game in the manner I envisioned.

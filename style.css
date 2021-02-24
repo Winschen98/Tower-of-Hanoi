@@ -44,7 +44,7 @@ body {
     font-size: 50px; 
     background:rgba(165, 101, 42, 0.712);
     transition: opacity 0.75s ease-out;
-    background-image: url(images/Hanoi-cover.png);
+    background-image: url(images/menu-images/Hanoi-cover.png);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex; 
