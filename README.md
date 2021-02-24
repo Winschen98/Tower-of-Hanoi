@@ -1,6 +1,6 @@
 # Tower of Hanoi Game
-![menu-screen-demo]("images/README-images/TOH-menu_screen.png")
-![game-screen-demo]("images/README-images/TOH-game_screen.png")
+![TOH-menu_screen](https://user-images.githubusercontent.com/76262430/109061811-f8bbd580-769b-11eb-856d-167b983f2ecf.png)
+![TOH-game_screen](https://user-images.githubusercontent.com/76262430/109061804-f6597b80-769b-11eb-93f0-a17a7175a88b.png)
 
 # Project Description
 A simple implementation of the Tower of Hanoi puzzle where the user will start with 3 stacks and all disc stacked onto the left-most stack. The user's goal will be to take every disc from the left-most stack and move it to the right-most stack without placing a bigger disc on top of a smaller disc.
