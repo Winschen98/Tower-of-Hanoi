@@ -14,7 +14,7 @@ const game = () => {
     const winText =  document.querySelector('.win-text')
     const winRecord =  document.querySelector('.win-record')
     const modalButton = document.querySelector('.modal-button')
-    const textOptions = ['Well done!', 'Good job!', 'Bananas!', 'Nutty!', "You're on fire!", 'Excellent!', 'Big brain!', 'Congratulations!', 'No way!', 'Genius!', 'Nice work!', 'Insane!', 'totally rad!']
+    const textOptions = ['Well done!', 'Good job!', 'Bananas!', 'Nutty!', "You're on fire!", 'Excellent!', 'Big brain!', 'Congratulations!', 'No way!', 'Genius!', 'Nice work!', 'Insane!', 'Totally Rad!', 'Amazing!']
 
     // number of disk  ===> init at 1 disk (level 1) 
     let numDisk = 1;
@@ -98,6 +98,10 @@ const game = () => {
     }
 
     const restartGame = () => {
+        tower1.classList.remove('selected');
+        tower2.classList.remove('selected');
+        tower3.classList.remove('selected');
+        chosenDisk = undefined; 
         clearDisk();
         stopTimer(); 
         seconds = 0; 
